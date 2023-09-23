@@ -4204,7 +4204,8 @@ public:
                                 IdentifierInfo *Getter, IdentifierInfo *Setter);
   static MSPropertyDecl *CreateDeserialized(ASTContext &C, unsigned ID);
 
-  static bool classof(const Decl *D) { return D->getKind() == MSProperty; }
+  static bool classof(const Decl *D) { return classofKind(D->getKind()); }
+  static bool classofKind(Kind K) { return K == MSProperty; }
 
   bool hasGetter() const { return GetterId != nullptr; }
   IdentifierInfo* getGetterId() const { return GetterId; }

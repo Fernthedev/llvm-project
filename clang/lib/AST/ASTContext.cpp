@@ -175,6 +175,7 @@ static SourceLocation getDeclLocForCommentSearch(const Decl *D,
   // so we use the location of the identifier as the "declaration location".
   if (isa<ObjCMethodDecl>(D) || isa<ObjCContainerDecl>(D) ||
       isa<ObjCPropertyDecl>(D) ||
+      isa<MSPropertyDecl>(D) ||
       isa<RedeclarableTemplateDecl>(D) ||
       isa<ClassTemplateSpecializationDecl>(D) ||
       // Allow association with Y across {} in `typedef struct X {} Y`.
